@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Student-CRUD-reactApp/static/css/main.27e3d007.chunk.css",
+    "main.js": "/Student-CRUD-reactApp/static/js/main.58c9a295.chunk.js",
+    "main.js.map": "/Student-CRUD-reactApp/static/js/main.58c9a295.chunk.js.map",
+    "runtime-main.js": "/Student-CRUD-reactApp/static/js/runtime-main.c41ad430.js",
+    "runtime-main.js.map": "/Student-CRUD-reactApp/static/js/runtime-main.c41ad430.js.map",
+    "static/css/2.1a02f21c.chunk.css": "/Student-CRUD-reactApp/static/css/2.1a02f21c.chunk.css",
+    "static/js/2.774a8fec.chunk.js": "/Student-CRUD-reactApp/static/js/2.774a8fec.chunk.js",
+    "static/js/2.774a8fec.chunk.js.map": "/Student-CRUD-reactApp/static/js/2.774a8fec.chunk.js.map",
+    "static/js/3.604bd4a0.chunk.js": "/Student-CRUD-reactApp/static/js/3.604bd4a0.chunk.js",
+    "static/js/3.604bd4a0.chunk.js.map": "/Student-CRUD-reactApp/static/js/3.604bd4a0.chunk.js.map",
+    "index.html": "/Student-CRUD-reactApp/index.html",
+    "static/css/2.1a02f21c.chunk.css.map": "/Student-CRUD-reactApp/static/css/2.1a02f21c.chunk.css.map",
+    "static/css/main.27e3d007.chunk.css.map": "/Student-CRUD-reactApp/static/css/main.27e3d007.chunk.css.map",
+    "static/js/2.774a8fec.chunk.js.LICENSE.txt": "/Student-CRUD-reactApp/static/js/2.774a8fec.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c41ad430.js",
+    "static/css/2.1a02f21c.chunk.css",
+    "static/js/2.774a8fec.chunk.js",
+    "static/css/main.27e3d007.chunk.css",
+    "static/js/main.58c9a295.chunk.js"
+  ]
+}
