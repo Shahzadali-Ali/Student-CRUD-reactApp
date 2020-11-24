@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
+import React, {useState } from 'react'
 
-export default class StudentCreate extends Component {
+export default function StudentCreate(){
 
-    constructor(){
-        super();
-        this.state={
-            title:null,
-            author:null
-        }
-    }
-    create(){
-console.warn(this.state);
+    const [inputName, setInputname] = useState({
+        name : "",
+        email : "",
+        phone : "",
+        address : "",
+        
+     });
+    function create(){
+//console.warn(this.state);
 fetch('http://localhost:3000/students',{
     method:"Post",
     headers:{'Content-Type': 'application/json'},
-    body:JSON.stringify(this.state)
+    body:JSON.stringify(inputName)
           
         }).then((result)=>{
             result.json().then((resp)=>
@@ -25,14 +25,14 @@ fetch('http://localhost:3000/students',{
             );
         })
     }
-    render() {
+ 
         return (
             <section className="py-5">
                 <div className="container">
                 <div className="border shadow offset-md-3 col-md-6 p-4">
                 <h1>Add Student</h1>
                 <div className="form-group">
-                <input onChange={(event) =>{this.setState({
+                <input onChange={(event) =>{setInputname({
                     name:event.target.value
                 })
 
@@ -41,7 +41,7 @@ fetch('http://localhost:3000/students',{
                 />
                 </div>
                 <div className="form-group">
-                <input onChange={(event) =>{this.setState({
+                <input onChange={(event) =>{setInputname({
                     email:event.target.value
                 })
 
@@ -51,7 +51,7 @@ fetch('http://localhost:3000/students',{
                 </div>
                
                 <div className="form-group">
-                <input onChange={(event) =>{this.setState({
+                <input onChange={(event) =>{setInputname({
                     phone:event.target.value
                 })
 
@@ -60,7 +60,7 @@ fetch('http://localhost:3000/students',{
                 />
                 </div>
                 <div className="form-group">
-                <textarea onChange={(event) =>{this.setState({
+                <textarea onChange={(event) =>{setInputname({
                     address:event.target.value
                 })
 
@@ -68,11 +68,11 @@ fetch('http://localhost:3000/students',{
                     className="form-control"
                 />
                 </div>
-                <button onClick={()=>{this.create()}} className="btn btn-primary">Add Student</button>
+                <button onClick={create} className="btn btn-primary">Add Student</button>
             </div>
                 </div>
             </section>
             
         )
     }
-}
+

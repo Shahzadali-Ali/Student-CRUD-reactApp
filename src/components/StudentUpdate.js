@@ -1,22 +1,19 @@
-import React, { Component } from 'react';
-
-export default class StudentUpdate extends Component {
+import React, {useState , useEffect } from 'react';
+import getItems from '../services/DataBaseServices';
+export default function StudentUpdate(props){
     
-    constructor(){
-        super();
-        this.state={
-            title:null,
-            author:null
-        }
-    }
-    componentDidMount()
-        {
-
-            fetch('http://localhost:3000/students/'+this.props.match.params.id).then((response)=>{
-                response.json().then((result)=>
+    // eslint-disable-next-line no-unused-vars
+    const [inputName, setInputname] = useState({
+        name : "",
+        email : "",
+        phone : "",
+        address : "",
+             });
+             
+             useEffect(() => {
+                getItems().then((result)=>
                     {
-                        console.warn(result);
-                this.setState({
+                setInputname({
                     id:result.id,
                     name:result.name,
                     email:result.email,
@@ -26,8 +23,8 @@ export default class StudentUpdate extends Component {
                     }
                 );
             })
-        }
-        update(){
+      
+        function updateData(){
             console.warn(this.state);
             fetch('http://localhost:3000/students/'+this.state.id,{
                 method:"PUT",
@@ -46,25 +43,9 @@ export default class StudentUpdate extends Component {
                     })
                 }
                 
-    render() {
-        console.warn(this.props.match.params)
+
         return (
-          //  <div>
-            //    <div>
-              //  <h1>This is Create</h1>
-                //<input onChange={(event) =>{this.setState({title:event.target.value})
-                //}} 
-                //placeholder = "Title" value={this.state.title}/>
-                //<input onChange={(event) =>{this.setState({
-                  //  author:event.target.value
-                //})
-
-                //}} placeholder = "Author" value={this.state.author}/>
-               // <br/>
-                //<button onClick={()=>{this.update()}}>Update Student</button>
-            //</div>
-           // </div>
-
+          
                 <section className="py-5">
                 <div className="container">
                 <div className="border shadow offset-md-3 col-md-6 p-4">
@@ -111,10 +92,10 @@ export default class StudentUpdate extends Component {
                 />
                 
                 </div>
-                <button onClick={()=>{this.update()}} className="btn btn-primary">Update Student</button>
+                <button onClick={() => updateData()} className="btn btn-primary">Update Student</button>
             </div>
                 </div>
             </section>
         )
     }
-}
+
