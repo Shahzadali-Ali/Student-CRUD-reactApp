@@ -1,13 +1,19 @@
-import React, { Component } from 'react'
+/* eslint-disable no-unused-vars */
+import React, { Component } from 'react';
 
-export default class Home extends Component {
-    render() {
+import DataBaseServices from '../services/DataBaseServices';
+
+export default function Home(props){
+
+    const hello = () => {
+        return "Hello World!";
+      }
         return (
             <section className="py-5">
             <div className="container">
-                <h1>Welcome To Students CRUD Operation in react.js</h1>
+                <h1>Welcome To Employee CRUD Operation in react.js</h1>
                 </div>
                 </section>
         )
     }
-}
+

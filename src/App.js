@@ -3,9 +3,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import {Navbar , Nav} from 'react-bootstrap';
 import Home from "./components/Home";
-import StudentsList from "./components/StudentsList";
-import StudentUpdate from "./components/StudentUpdate";
-import StudentCreate from "./components/StudentCreate";
+import UserssList from "./components/UsersList";
+import UserUpdate from "./components/UserUpdate";
+import UserCreate from "./components/UserCreate";
 import DataBaseServices from "./services/DataBaseServices";
 //import DataBaseServices from "./services/DataBaseServices";
 
@@ -17,13 +17,13 @@ function App() {
   <Router>
   <Navbar bg="light" expand="lg">
   <div className="container">
-  <Navbar.Brand>Students Panel</Navbar.Brand>
+  <Navbar.Brand>Employee Panel</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <Link to="/" className="nav-link">Home</Link>
-      <Link to="/add" className="nav-link">Add Student</Link>
-      <Link to="/students" className="nav-link">Students List</Link>
+      <Link to="/add" className="nav-link">Add Employee</Link>
+      <Link to="/employees" className="nav-link">Employee List</Link>
     
       
     </Nav>
@@ -32,18 +32,18 @@ function App() {
   </div>
 </Navbar>
   
-    <Route path="/Students">
-    <StudentsList />
+    <Route path="/employees">
+    <UserssList />
     </Route>
     <Route path="/update/:id" 
     render={props => (
-        <StudentUpdate {...props} />
+        <UserUpdate {...props} />
     )}>
   
     </Route>
     
     <Route path="/add">
-    <StudentCreate />
+    <UserCreate />
     </Route>
     <Route path="/" exact>
     <Home />
